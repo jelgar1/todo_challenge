@@ -1,0 +1,27 @@
+body {
+  color: grey;
+  font-family: futura;
+  text-align: center;
+}
+
+.main-box {
+  background-color: pink;
+  margin:0 auto;
+  width: 40%;
+  text-align: center;
+}
+
+#todo-text {
+  width: 40%;
+  text-align: center;
+  font-family: futura;
+}
+#todo-submit {
+  font-family: futura;
+}
+
+#checkbox-form {
+  margin:0 auto;
+  width:32%;
+  text-align: left;
+}
