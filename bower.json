@@ -1,0 +1,24 @@
+{
+  "name": "todo_challenge",
+  "homepage": "https://github.com/jelgar1/todo_challenge",
+  "authors": [
+    "Jelgar <jonathanelgardiner@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.9",
+    "angular-resource": "~1.4.9"
+  }
+}
