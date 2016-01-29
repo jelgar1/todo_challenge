@@ -5,13 +5,14 @@
     <title>Jon's ToDo List</title>
     <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/app.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/toDoListController.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="ToDoListController as ctrl">
     <h1>ToDo List by Jonathan Gardiner</h1>
     <div class="main-box">
       <form class="todo-form">
@@ -21,7 +22,7 @@
       <br>
       <form id="checkbox-form">
         <input type="checkbox" name="vehicle" value="Bike"> Feed the cat<br>
-        <input type="checkbox" name="vehicle" value="Car"> Complete rubik's cube<br>
+        <input type="checkbox" name="vehicle" value="Car"> Complete rubiks cube<br>
       </form>
     </div>
   </body>
