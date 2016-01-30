@@ -17,12 +17,12 @@
       <h1>ToDo List by Jonathan Gardiner</h1>
       <h3>What you do today can improve all your tomorrows</h3>
       <form class="todo-form">
-        <input type="text" value="What you do today can improve all your tomorrows" id="todo-text" ng-model="ctrl.task">
-        <button class="btn" id="todo-submit" ng-click="ctrl.addTask(ctrl.task)">Add task!</button>
+        <input type="text" value="What you do today can improve all your tomorrows" id="todo-text" ng-model="ctrl.taskname">
+        <button class="btn" id="todo-submit" ng-click="ctrl.addTask(ctrl.taskname)">Add task!</button>
       </form>
       <br>
       <form id="checkbox-form" ng-repeat="task in ctrl.taskList">
-        <input type="checkbox"> {{task}}<br>
+        <input type="checkbox"> {{task.taskname}}<br>
       </form>
     </div>
   </body>

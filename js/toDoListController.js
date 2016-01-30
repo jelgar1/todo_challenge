@@ -3,8 +3,8 @@ toDoList.controller('ToDoListController', [function(){
 
     this.taskList = [];
 
-    this.addTask = function(task){
-      this.taskList.push(task);
-      this.task =  null;
+    this.addTask = function(taskname){
+      this.taskList.push({taskname:taskname, completed:false});
+      this.taskname =  null;
     };
 }]);

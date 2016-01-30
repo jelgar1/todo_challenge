@@ -11,8 +11,17 @@ describe('ToDoListController', function() {
     expect(ctrl.taskList).toEqual([]);
   });
 
-  it('can add a task to the list', function() {
-    ctrl.addTask('Feed the cat');
-    expect(ctrl.taskList).toContain('Feed the cat');
+  describe('A task is added', function() {
+    beforeEach(inject(function() {
+      ctrl.addTask('Feed the cat');
+    }))
+
+    it('can add a task to the list', function() {
+      expect(ctrl.taskList[0].taskname).toContain('Feed the cat');
+    });
+
+    it('sets a task as not completed by default', function() {
+      expect(ctrl.taskList[0].completed).toEqual(false);
+    });
   });
 });
