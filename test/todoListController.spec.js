@@ -28,5 +28,9 @@ describe('ToDoListController', function() {
       ctrl.taskCompleted(0);
       expect(ctrl.taskList[0].completed).toEqual(true);
     });
+
+    it('counts the number of incomplete tasks', function() {
+      expect(ctrl.taskCount()).toEqual(1);
+    });
   });
 });

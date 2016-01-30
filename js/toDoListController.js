@@ -12,4 +12,8 @@ toDoList.controller('ToDoListController', [function(){
       this.taskList[index].completed = !this.taskList[index].completed;
     };
 
+    this.taskCount = function(){
+      return this.taskList.length;
+    };
+
 }]);

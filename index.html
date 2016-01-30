@@ -15,7 +15,8 @@
   <body ng-controller="ToDoListController as ctrl">
     <div class="main-box">
       <h1>ToDo List by Jonathan Gardiner</h1>
-      <h3>What you do today can improve all your tomorrows</h3>
+      <h3>You currently have {{ctrl.taskCount()}} things to do.</h3>
+      <h3>What do you want to do?</h3>
       <form class="todo-form">
         <input type="text" value="What you do today can improve all your tomorrows" id="todo-text" ng-model="ctrl.taskname">
         <button class="btn" id="todo-submit" ng-click="ctrl.addTask(ctrl.taskname)">Add task!</button>
