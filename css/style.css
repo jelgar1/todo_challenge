@@ -1,14 +1,21 @@
 body {
-  color: grey;
+  color: black;
   font-family: futura;
   text-align: center;
+  background: url("../images/home_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .main-box {
-  background-color: pink;
+  background-color: #778899;
   margin:0 auto;
   width: 40%;
   text-align: center;
+  opacity: 0.9;
+  padding: 0.5%;
 }
 
 #todo-text {
