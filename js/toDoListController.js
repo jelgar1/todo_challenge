@@ -7,4 +7,9 @@ toDoList.controller('ToDoListController', [function(){
       this.taskList.push({taskname:taskname, completed:false});
       this.taskname =  null;
     };
+
+    this.taskCompleted = function(index){
+      this.taskList[index].completed = !this.taskList[index].completed;
+    };
+
 }]);

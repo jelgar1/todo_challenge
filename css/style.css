@@ -18,6 +18,11 @@ body {
   padding: 0.5%;
 }
 
+.completed-true {
+  text-decoration: line-through;
+  color: #ddd;
+}
+
 #todo-text {
   width: 40%;
   text-align: center;

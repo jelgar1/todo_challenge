@@ -23,5 +23,10 @@ describe('ToDoListController', function() {
     it('sets a task as not completed by default', function() {
       expect(ctrl.taskList[0].completed).toEqual(false);
     });
+
+    it('can set a task as completed', function() {
+      ctrl.taskCompleted(0);
+      expect(ctrl.taskList[0].completed).toEqual(true);
+    });
   });
 });

@@ -22,7 +22,7 @@
       </form>
       <br>
       <form id="checkbox-form" ng-repeat="task in ctrl.taskList">
-        <input type="checkbox"> {{task.taskname}}<br>
+        <input type="checkbox" ng-click="ctrl.taskCompleted($index)"><span class="completed-{{task.completed}}">{{task.taskname}}</span><br>
       </form>
     </div>
   </body>
