@@ -1,5 +1,5 @@
 body {
-  color: black;
+  color: #fdf6ee;
   font-family: futura;
   text-align: center;
   background: url("../images/home_background.jpg") no-repeat center center fixed;
@@ -10,7 +10,7 @@ body {
 }
 
 .main-box {
-  background-color: #778899;
+  background-color: #2f3f4f;
   margin:0 auto;
   width: 60%;
   text-align: center;
@@ -20,15 +20,27 @@ body {
 
 .completed-true {
   text-decoration: line-through;
-  color: #ddd;
+  color: #778899;
 }
 
 .btn {
   font-family: futura;
+  background-color: #2f3f4f;
+  border-color: #fdf6ee;
+  color: #fdf6ee;
+  padding: 1%;
+  margin: 1%;
 }
 
-.completed-editing {
-  border-color: red;
+.text-box {
+  text-align: center;
+  font-family: futura;
+}
+
+#count {
+  font-family; marker felt;
+  color: red;
+  font-size: 1.4em;
 }
 
 #todo-text {

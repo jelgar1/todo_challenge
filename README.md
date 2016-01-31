@@ -1,73 +1,51 @@
-# Todo Challenge
+#Bowling Scorecard
+##Features:
 
-* Deadline: submit completed pull request by 9am on Monday
-* You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
+Users can add tasks to the do list.
 
-Steps
--------
+Users can mark a task as complete and the task will change color and strikethrough.
 
-1. Fill out your learning plan self review for the week: https://github.com/makersacademy/learning_plan 
-2. Fork this repo, and clone to your local machine
-3. Complete the following challenge:
+Users can delete individual tasks as well as all tasks.
 
-## Challenge
+Users can edit individual tasks and the task list will update and remain the order.
 
-![Todo mockup](https://makersacademy.mybalsamiq.com/mockups/2914603.png?key=afabb09aef2901a2732515ae4349c1ec0458294b)
+Users have a number of total tasks at the top of the page so they don't have to count them all.
 
-Build a Todo list as a mini front-end application. You don't have to use a database, the front-end is more important - you can use an appropriate data structure stored somewhere in your JavaScript (this time only!)
+####Future Features:
+Users are able to only delete the tasks which have been completed. (WIP)
 
-Here are the core user stories:
+Users can see a total number of incomplete tasks and a total for complete tasks.
 
-```
-As a forgetful person
-I want to store my tasks
-So that I don't forget them
 
-As a person with limited time
-I want to instantly be able to update my todo list (adding and changing entries)
-So that I have more time to think about other things
+![alt text](./images/todo_screenshot.png "Todo screenshot1")
 
-As a person who actually gets stuff done
-I want to mark my tasks as done
-So that I don't do them twice
-```
+##Installation:
 
-Here are some other user stories you may choose to implement:
+You can try the ToDo List online:
 
-```
-As a person with a lot of tasks
-I want to be able to filter my tasks by "All", "Active", "Complete"
-So that I only see the relevant tasks
+COMING SOON!!
 
-As a person who doesn't like counting by hand
-I want to see a total number of tasks
-So that I don't have to count
+or install it locally:
 
-As someone who has done lots of stuff
-I want to be able to clear my completed tasks
-So I never see them again
-```
+From the command line...
 
-As you may imagine, implementing a To-do list is very much a solved problem. However, we are mainly interested in seeing how you approach testing and design. We are looking for:
+* $ git clone git@github.com:jelgar/todo-challenge.git
+* $ cd todo-challenge
+* $ npm install
+* $ open index.html
 
-* well written, well structured acceptance and unit tests
-* clear and expressive JavaScript
-* good HTML5 markup
+##Technologies:
 
-Don't worry about deployment, and make sure you read the CONTRIBUTING.md when submitting a pull request.
+* JavaScript
+* AngularJS
+* JQuery
+* html
+* CSS
+* Jasmine
+* Protractor
+* Karma
 
-## Extensions
 
-* Deploy the app
-* Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
-* Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
+##Contributors:
 
-## CI
-
-Read the `.travis.yml` if any of the steps below don't make sense! 
-
-* Make sure you have set up `npm test` in your `package.json` so that it runs your Karma tests
-* Make sure you have your Protractor config file at `e2e/conf.js`
-* Make sure `npm start` spins up whatever serves up your app - `http-server`, Sinatra or Node
-
-Good luck!
+Jonathan Gardiner

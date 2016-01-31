@@ -46,5 +46,11 @@ describe('ToDoListController', function() {
       ctrl.updateTask(0, 'Feed the cat EDITED');
       expect(ctrl.taskList[0].taskname).toEqual('Feed the cat EDITED');
     });
+    it('clears only completed tasks', function(){
+      ctrl.addTask('Learn AngularJS');
+      ctrl.taskCompleted(0);
+      ctrl.clearCompletedTasks();
+      expect(ctrl.taskCount()).toEqual(1);
+    });
   });
 });

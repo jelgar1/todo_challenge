@@ -4,8 +4,8 @@ toDoList.controller('ToDoListController', [function(){
     this.taskList = [];
 
     this.addTask = function(taskname){
-      this.taskList.push({taskname:taskname, completed:false});
-      this.taskname =  null;
+        this.taskList.push({taskname:taskname, completed:false});
+        this.taskname =  null;
     };
 
     this.taskCompleted = function(index){
@@ -26,6 +26,14 @@ toDoList.controller('ToDoListController', [function(){
 
     this.updateTask = function(index, taskname){
       this.taskList.splice(index, 1, {taskname:taskname, completed:false});
+    };
+
+    this.clearCompletedTasks = function() {
+      var oldTaskList = this.taskList;
+      this.taskList = [];
+      angular.forEach(oldTaskList, function(task) {
+        if (!task.completed) this.taskList.push(task);
+      });
     };
 
     this.toggleEditMode = function(index){

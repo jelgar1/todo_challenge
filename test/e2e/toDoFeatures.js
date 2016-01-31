@@ -9,8 +9,11 @@ describe('ToDo List', function() {
   var editBtn = element(by.id('edit'))
   var editTextBox = element(by.id('edit-text'))
   var submitChangesButton = element(by.id('submit-changes'))
-  it('has a title', function() {
-    expect(browser.getTitle()).toEqual("Jon's ToDo List");
+
+  it("won't let a user submit an empty task", function(){
+    addTaskBtn.click();
+    expect(element(by.className('completed-false')).isPresent()).
+      toBeFalsy();
   });
 
   describe('Adds a task to the list', function() {
@@ -39,17 +42,19 @@ describe('ToDo List', function() {
     });
 
     describe('Deletes a task', function() {
-      var deleteTaskBtn = element(by.className('cross'))
+      var deleteTaskBtn = element(by.id('cross'))
       beforeEach(function() {
         deleteTaskBtn.click();
       });
       it('allows users to delete a task', function() {
-        expect(element(by.className('completed-false')).isPresent()).toBeFalsy();
+        expect(element(by.className('completed-false')).isPresent()).
+          toBeFalsy();
       });
     });
 
     it('counts the number of tasks on the list', function() {
-      expect(element(by.binding('ctrl.taskCount()')).getText()).toEqual('You currently have 1 things to do.');
+      expect(element(by.binding('ctrl.taskCount()')).getText()).
+        toEqual('1');
     });
 
     it('allows users to clear all tasks', function() {

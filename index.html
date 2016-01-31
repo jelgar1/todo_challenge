@@ -15,21 +15,21 @@
   <body ng-controller="ToDoListController as ctrl">
     <div class="main-box">
       <h1>ToDo List by Jonathan Gardiner</h1>
-      <h3>You currently have {{ctrl.taskCount()}} things to do.</h3>
+      <h3>You currently have <span id="count">{{ctrl.taskCount()}}</span> things to do.</h3>
       <h3>What do you want to do?</h3>
       <form class="todo-form">
         <input type="text" value="What you do today can improve all your tomorrows" id="todo-text" ng-model="ctrl.taskname">
-        <button class="btn" id="todo-submit" ng-click="ctrl.addTask(ctrl.taskname)">Add task!</button>
+        <button class="btn" class="text-box" id="todo-submit" ng-click="ctrl.addTask(ctrl.taskname)">Add task!</button>
       </form>
       <br>
       <form id="checkbox-form" ng-repeat="task in ctrl.taskList">
         <input type="checkbox" class="checkbox" ng-click="ctrl.taskCompleted($index)">
         <span class="completed-{{task.completed}}" ng-hide="ctrl.isEditing($index)">{{task.taskname}}</span>
-        <input type="text" value="What you do today can improve all your tomorrows" ng-show="ctrl.isEditing($index)" id="edit-text" ng-show="ctrl.taskList[$index].completed==='editing'" ng-model='ctrl.taskList[$index].taskname'>
+        <input class="text-box" type="text" value="What you do today can improve all your tomorrows" ng-show="ctrl.isEditing($index)" id="edit-text" ng-show="ctrl.taskList[$index].completed==='editing'" ng-model='ctrl.taskList[$index].taskname'>
         <button class="btn" id="edit" ng-click="ctrl.toggleEditMode($index)" ng-hide="ctrl.isEditing($index)">edit</button>
         <button class="btn" id='submit-changes' ng-click="ctrl.updateTask($index, ctrl.taskList[$index].taskname)" ng-show="ctrl.isEditing($index)">submit</button>
-        <button class="cross" ng-click="ctrl.deleteTask($index)">x</button>
-        <br>
+        <button class="btn" id='cross' ng-click="ctrl.deleteTask($index)">x</button>
+        <br></br>
       </form>
       <br>
       <button class="btn" id="clear-all" ng-click="ctrl.deleteAllTasks()">Clear all tasks</button>
