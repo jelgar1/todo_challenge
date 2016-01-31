@@ -32,5 +32,10 @@ describe('ToDoListController', function() {
     it('counts the number of incomplete tasks', function() {
       expect(ctrl.taskCount()).toEqual(1);
     });
+
+    it('deletes a task', function(){
+      ctrl.deleteTask(0);
+      expect(ctrl.taskList[0]).not.toBeDefined();
+    });
   });
 });
