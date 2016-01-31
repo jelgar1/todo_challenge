@@ -1,4 +1,4 @@
-#Bowling Scorecard
+#ToDo List
 ##Features:
 
 Users can add tasks to the do list.
