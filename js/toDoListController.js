@@ -19,8 +19,23 @@ toDoList.controller('ToDoListController', [function(){
     this.deleteTask = function(index){
       this.taskList.splice(index,1)
     };
-    
+
     this.deleteAllTasks = function(){
       this.taskList = [];
+    };
+
+    this.updateTask = function(index, taskname){
+      this.taskList.splice(index, 1, {taskname:taskname, completed:false});
+    };
+
+    this.toggleEditMode = function(index){
+       this.taskList[index].completed ='editing'
+    }
+    this.isEditing = function(index){
+      if(this.taskList[index].completed==='editing') {
+        return true;
+      } else {
+        return false;
+      }
     };
 }]);

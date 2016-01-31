@@ -6,6 +6,9 @@ describe('ToDo List', function() {
   var newTaskBox = element(by.model('ctrl.taskname'));
   var addTaskBtn = element(by.id('todo-submit'))
   var clearAllBtn = element(by.id('clear-all'))
+  var editBtn = element(by.id('edit'))
+  var editTextBox = element(by.id('edit-text'))
+  var submitChangesButton = element(by.id('submit-changes'))
   it('has a title', function() {
     expect(browser.getTitle()).toEqual("Jon's ToDo List");
   });
@@ -54,6 +57,14 @@ describe('ToDo List', function() {
       addTaskBtn.click();
       clearAllBtn.click();
       expect(element(by.className('completed-false')).isPresent()).toBeFalsy();
+    });
+
+    it('allows users to edit a task', function(){
+      editBtn.click();
+      editTextBox.sendKeys(' EDITED');
+      submitChangesButton.click();
+      expect(element(by.className('completed-false')).getText()).
+        toEqual('Feed the cat EDITED');
     });
   });
 });

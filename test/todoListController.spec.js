@@ -42,5 +42,9 @@ describe('ToDoListController', function() {
       ctrl.deleteAllTasks();
       expect(ctrl.taskList[0]).not.toBeDefined();
     });
+    it('edits a task', function() {
+      ctrl.updateTask(0, 'Feed the cat EDITED');
+      expect(ctrl.taskList[0].taskname).toEqual('Feed the cat EDITED');
+    });
   });
 });

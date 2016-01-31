@@ -24,7 +24,10 @@
       <br>
       <form id="checkbox-form" ng-repeat="task in ctrl.taskList">
         <input type="checkbox" class="checkbox" ng-click="ctrl.taskCompleted($index)">
-        <span class="completed-{{task.completed}}">{{task.taskname}}</span>
+        <span class="completed-{{task.completed}}" ng-hide="ctrl.isEditing($index)">{{task.taskname}}</span>
+        <input type="text" value="What you do today can improve all your tomorrows" ng-show="ctrl.isEditing($index)" id="edit-text" ng-show="ctrl.taskList[$index].completed==='editing'" ng-model='ctrl.taskList[$index].taskname'>
+        <button class="btn" id="edit" ng-click="ctrl.toggleEditMode($index)" ng-hide="ctrl.isEditing($index)">edit</button>
+        <button class="btn" id='submit-changes' ng-click="ctrl.updateTask($index, ctrl.taskList[$index].taskname)" ng-show="ctrl.isEditing($index)">submit</button>
         <button class="cross" ng-click="ctrl.deleteTask($index)">x</button>
         <br>
       </form>
