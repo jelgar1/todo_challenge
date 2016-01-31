@@ -19,5 +19,8 @@ toDoList.controller('ToDoListController', [function(){
     this.deleteTask = function(index){
       this.taskList.splice(index,1)
     };
-
+    
+    this.deleteAllTasks = function(){
+      this.taskList = [];
+    };
 }]);

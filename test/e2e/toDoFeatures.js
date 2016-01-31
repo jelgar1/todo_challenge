@@ -5,6 +5,7 @@ describe('ToDo List', function() {
   });
   var newTaskBox = element(by.model('ctrl.taskname'));
   var addTaskBtn = element(by.id('todo-submit'))
+  var clearAllBtn = element(by.id('clear-all'))
   it('has a title', function() {
     expect(browser.getTitle()).toEqual("Jon's ToDo List");
   });
@@ -46,6 +47,13 @@ describe('ToDo List', function() {
 
     it('counts the number of tasks on the list', function() {
       expect(element(by.binding('ctrl.taskCount()')).getText()).toEqual('You currently have 1 things to do.');
+    });
+
+    it('allows users to clear all tasks', function() {
+      newTaskBox.sendKeys('Learn Angular');
+      addTaskBtn.click();
+      clearAllBtn.click();
+      expect(element(by.className('completed-false')).isPresent()).toBeFalsy();
     });
   });
 });

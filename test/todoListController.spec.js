@@ -37,5 +37,10 @@ describe('ToDoListController', function() {
       ctrl.deleteTask(0);
       expect(ctrl.taskList[0]).not.toBeDefined();
     });
+    it('clears all tasks', function(){
+      ctrl.addTask('Learn AngularJS');
+      ctrl.deleteAllTasks();
+      expect(ctrl.taskList[0]).not.toBeDefined();
+    });
   });
 });
