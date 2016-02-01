@@ -32,7 +32,7 @@ toDoList.controller('ToDoListController', [function(){
       var oldTaskList = this.taskList;
       this.taskList = [];
       angular.forEach(oldTaskList, function(task) {
-        if (!task.completed) this.taskList.push(task);
+        if (!task.completed) self.taskList.push(task);
       });
     };
 

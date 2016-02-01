@@ -9,6 +9,8 @@ describe('ToDo List', function() {
   var editBtn = element(by.id('edit'))
   var editTextBox = element(by.id('edit-text'))
   var submitChangesButton = element(by.id('submit-changes'))
+  var taskCompletedBtn = element(by.className('checkbox'));
+
 
   it("won't let a user submit an empty task", function(){
     addTaskBtn.click();
@@ -27,7 +29,6 @@ describe('ToDo List', function() {
     });
 
     describe('Marks task as complete', function() {
-      var taskCompletedBtn = element(by.className('checkbox'));
       beforeEach(function() {
         taskCompletedBtn.click();
       });
@@ -57,19 +58,32 @@ describe('ToDo List', function() {
         toEqual('1');
     });
 
-    it('allows users to clear all tasks', function() {
-      newTaskBox.sendKeys('Learn Angular');
-      addTaskBtn.click();
-      clearAllBtn.click();
-      expect(element(by.className('completed-false')).isPresent()).toBeFalsy();
-    });
-
     it('allows users to edit a task', function(){
       editBtn.click();
       editTextBox.sendKeys(' EDITED');
       submitChangesButton.click();
       expect(element(by.className('completed-false')).getText()).
         toEqual('Feed the cat EDITED');
+    });
+
+    describe('Adds a second task', function() {
+      var clearCompletedBtn = element(by.id('clear-completed'))
+      beforeEach(function() {
+        newTaskBox.sendKeys('Clean the kitchen');
+        addTaskBtn.click();
+      });
+
+      it('allows users to clear all tasks', function() {
+        clearAllBtn.click();
+        expect(element(by.className('completed-false')).isPresent()).toBeFalsy();
+      });
+
+      it('allows users to clear all completed tasks', function(){
+        taskCompletedBtn.get(0).click();
+        clearCompletedBtn.click();
+        expect(element(by.binding('ctrl.taskCount()')).getText()).
+          toEqual('1');
+      });
     });
   });
 });
