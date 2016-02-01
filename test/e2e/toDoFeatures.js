@@ -10,6 +10,7 @@ describe('ToDo List', function() {
   var editTextBox = element(by.id('edit-text'))
   var submitChangesButton = element(by.id('submit-changes'))
   var taskCompletedBtn = element(by.className('checkbox'));
+  var toDoList = element
 
 
   it("won't let a user submit an empty task", function(){
@@ -68,6 +69,8 @@ describe('ToDo List', function() {
 
     describe('Adds a second task', function() {
       var clearCompletedBtn = element(by.id('clear-completed'))
+      var firstCheckBox = element.all(by.className('checkbox')).first();
+
       beforeEach(function() {
         newTaskBox.sendKeys('Clean the kitchen');
         addTaskBtn.click();
@@ -79,7 +82,7 @@ describe('ToDo List', function() {
       });
 
       it('allows users to clear all completed tasks', function(){
-        taskCompletedBtn.get(0).click();
+        firstCheckBox.click();
         clearCompletedBtn.click();
         expect(element(by.binding('ctrl.taskCount()')).getText()).
           toEqual('1');
