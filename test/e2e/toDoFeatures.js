@@ -87,6 +87,13 @@ describe('ToDo List', function() {
         expect(element(by.binding('ctrl.taskCount()')).getText()).
           toEqual('1');
       });
+      it('counts all tasks', function() {
+        expect(element(by.id('count')).getText()).toBe('2');
+      });
+      it('counts only incomplete tasks', function() {
+        firstCheckBox.click();
+        expect(element(by.id('incomplete')).getText()).toBe('1');
+      });
     });
   });
 });

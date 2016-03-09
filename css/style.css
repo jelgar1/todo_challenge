@@ -43,6 +43,12 @@ body {
   font-size: 1.4em;
 }
 
+#incomplete {
+  font-family; marker felt;
+  color: red;
+  font-size: 1.4em;
+}
+
 #todo-text {
   width: 50%;
   text-align: center;

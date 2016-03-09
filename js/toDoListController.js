@@ -16,6 +16,14 @@ toDoList.controller('ToDoListController', [function(){
       return this.taskList.length;
     };
 
+    this.incompleteCount = function(){
+      var incomplete = 0
+      angular.forEach(this.taskList, function(task) {
+        if (!task.completed) incomplete = incomplete + 1
+      });
+      return incomplete
+    };
+
     this.deleteTask = function(index){
       this.taskList.splice(index,1)
     };
