@@ -10,4 +10,5 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - webdriver-manager update
   - webdriver-manager start > /dev/null &
-  - npm start
+  - npm start > /dev/null &
+  - sleep 3
