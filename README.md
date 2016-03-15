@@ -11,7 +11,6 @@ Users can edit individual tasks and the task list will update and remain the ord
 
 Users have a number of total tasks at the top of the page so they don't have to count them all.
 
-
 Users can see a total number of incomplete tasks and a total for complete tasks.
 
 
@@ -37,7 +36,6 @@ $ open index.html
 
 ## Technologies:
 
-* JavaScript
 * AngularJS
 * JQuery
 * html
